@@ -6,6 +6,7 @@
   const builtin={library:{id:'library',name:'도서관'},cafe:{id:'cafe',name:'카페'}};
   let data=C.fresh(), selected=new Date(), revision=0, tableSignature='', lastTick=new Date(), previewState='study';
   let customPacks={}, db=null, editor=null, pendingImport=null, queuedAlarm=null, toastTimer=null, audio=null;
+  let reminderTimer=null, reminderActive=false, reminderNodes=[];
   function message(text) {
     const modal=document.querySelector('dialog[open]');
     let target=$('toast');
@@ -244,7 +245,7 @@
   function prepareAudio() {
     try { const Audio=window.AudioContext||window.webkitAudioContext; if(Audio&&!audio) audio=new Audio(); audio?.resume().catch(()=>{}); } catch(error) { /* Screen alarms remain available. */ }
   }
-  function beep() {
+  function beep(loud=false) {
     if(!data.preferences.sound||!audio||audio.state!=='running') return;
     const startAt=audio.currentTime+.02;
     // 짧은 3음 상승 차임과 마지막 반짝임으로, 경계마다 부담 없이 들리는 귀여운 알림음.
@@ -252,21 +253,42 @@
     for(const [frequency,offset,length,volume,type] of notes) {
       const oscillator=audio.createOscillator(), gain=audio.createGain(), start=startAt+offset, end=start+length;
       oscillator.type=type; oscillator.frequency.setValueAtTime(frequency,start); oscillator.connect(gain); gain.connect(audio.destination);
-      gain.gain.setValueAtTime(.001,start); gain.gain.linearRampToValueAtTime(volume,start+.018); gain.gain.exponentialRampToValueAtTime(.001,end);
+      const peak=volume*(loud?2.8:1);
+      gain.gain.setValueAtTime(.001,start); gain.gain.linearRampToValueAtTime(peak,start+.018); gain.gain.exponentialRampToValueAtTime(.001,end);
       oscillator.start(start); oscillator.stop(end+.02);
+      if(loud) {
+        const note={oscillator,gain}; reminderNodes.push(note);
+        oscillator.onended=()=>{reminderNodes=reminderNodes.filter(active=>active!==note);oscillator.disconnect();gain.disconnect();};
+      }
     }
   }
-  function showAlarm(title,text,state='study',sound=false) {
+  function stopReminder() {
+    clearInterval(reminderTimer); reminderTimer=null; reminderActive=false;
+    $('alarm-dialog').classList.remove('persistent'); $('alarm-repeat-note').hidden=true;
+    if(audio) for(const {oscillator,gain} of reminderNodes) {
+      try { const now=audio.currentTime; gain.gain.cancelScheduledValues(now); gain.gain.setTargetAtTime(.001,now,.01); oscillator.stop(now+.04); } catch(error) { /* The note may have ended already. */ }
+    }
+    reminderNodes=[];
+  }
+  function startReminder() {
+    stopReminder(); reminderActive=true;
+    $('alarm-dialog').classList.add('persistent'); $('alarm-repeat-note').hidden=false;
+    beep(true);
+    reminderTimer=setInterval(()=>{if($('alarm-dialog').open) beep(true);},5000);
+  }
+  function showAlarm(title,text,state='study',sound=false,persistent=false) {
+    if(reminderActive&&!persistent) {queuedAlarm={title,text,state,sound:false,persistent:false};return;}
     $('alarm-title').textContent=title; $('alarm-message').textContent=text; setArt($('alarm-art'),data.preferences.theme,state);
+    $('alarm-dismiss').textContent=persistent?'확인하고 알림 끄기':'확인';
     const another=document.querySelector('dialog[open]:not(#alarm-dialog)');
-    if(another) { queuedAlarm={title,text,state};message(text); } else dialog('alarm-dialog');
-    if(sound) beep();
+    if(another&&!persistent) { queuedAlarm={title,text,state,sound:false,persistent:false};message(text); } else dialog('alarm-dialog');
+    if(persistent) startReminder(); else if(sound) beep();
   }
   function boundaryAlarm(event) {
-    const next=event.starts[0], ended=event.ends[0];
-    const title=next?`${next[2]} 시작`:'블록 마감';
+    const next=event.starts[0], ended=event.ends[0], longEnded=event.ends.find(C.isLongStudySession);
+    const title=longEnded?`${longEnded[2]} 완료!`:next?`${next[2]} 시작`:'블록 마감';
     const text=[ended?`${ended[2]} 마감. 미완료는 표시만 남겨요.`:'',next?`${next[0]}–${next[1]} · ${next[4]}`:'다음 시작 시각까지 잠깐 쉬어요.'].filter(Boolean).join('\n\n');
-    showAlarm(title,text,next?C.artState(next[2]):'finish',true);
+    showAlarm(title,text,longEnded?'finish':next?C.artState(next[2]):'finish',true,Boolean(longEnded));
     if(data.preferences.notifications&&window.Notification?.permission==='granted') {try{new Notification(title,{body:text,tag:'kiiroitori-boundary'});}catch(error){/* In-page alarm already shown. */}}
   }
   function tick() {const now=new Date(), event=C.latestCrossed(data,lastTick,now);lastTick=now;render();if(event) boundaryAlarm(event);}
@@ -274,9 +296,11 @@
   read();
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog').close()));
   document.querySelectorAll('dialog').forEach(modal=>modal.addEventListener('close',()=>{
+    if(modal.id==='alarm-dialog') stopReminder();
     modal.querySelectorAll('.dialog-notice').forEach(el=>el.remove());
-    if(queuedAlarm&&!document.querySelector('dialog[open]')) {const alarm=queuedAlarm;queuedAlarm=null;showAlarm(alarm.title,alarm.text,alarm.state);}
+    if(queuedAlarm&&!document.querySelector('dialog[open]')) {const alarm=queuedAlarm;queuedAlarm=null;showAlarm(alarm.title,alarm.text,alarm.state,alarm.sound,alarm.persistent);}
   }));
+  $('alarm-dialog').addEventListener('cancel',event=>{if(reminderActive) event.preventDefault();});
   document.addEventListener('pointerdown',prepareAudio,{once:true}); document.addEventListener('keydown',prepareAudio,{once:true});
   $('home-link').addEventListener('click',event=>{event.preventDefault();selected=new Date();preference('mini',false);window.scrollTo({top:0,behavior:'auto'});});
   $('focus-toggle').addEventListener('click',()=>preference('mini',!data.preferences.mini));

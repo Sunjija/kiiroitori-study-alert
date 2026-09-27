@@ -52,6 +52,11 @@
   const rowsOn = (data,date) => copy(data.days[dateKey(date)]||data.week[String(weekday(date))]||global.DEFAULT_WEEK[String(weekday(date))]);
   const current = (rows,now) => rows.find(row=>at(now,row[0])<=now&&now<at(now,row[1]));
   const artState = title => /정리|정산|마감|종료/.test(title)?'finish':/휴식|점심|식사|알바|귀가/.test(title)?'rest':'study';
+  const isLongStudySession = row => {
+    if(!row||artState(row[2])!=='study') return false;
+    const minutes = time => Number(time.slice(0,2))*60+Number(time.slice(3));
+    return minutes(row[1])-minutes(row[0])>=60;
+  };
   const momentState = (rows,now) => { const row=current(rows,now); return row?artState(row[2]):rows.length&&now>=at(now,rows.at(-1)[1])?'finish':'rest'; };
   function eventsOn(data,day) {
     const events=new Map();
@@ -79,5 +84,5 @@
     if(!result.length) throw Error('오늘 남은 핵심 공부가 없어요. 내일 첫 공부를 준비해 주세요.');
     return result;
   }
-  global.StudyCore={copy,dateKey,weekday,at,shift,parseDay,validateRows,validateData,fresh,rowsOn,current,artState,momentState,eventsOn,upcoming,latestCrossed,coreRows};
+  global.StudyCore={copy,dateKey,weekday,at,shift,parseDay,validateRows,validateData,fresh,rowsOn,current,artState,isLongStudySession,momentState,eventsOn,upcoming,latestCrossed,coreRows};
 })(typeof window==='undefined'?globalThis:window);
