@@ -246,7 +246,15 @@
   }
   function beep() {
     if(!data.preferences.sound||!audio||audio.state!=='running') return;
-    for(const offset of [0,.25]) {const oscillator=audio.createOscillator(), gain=audio.createGain();oscillator.frequency.value=660;oscillator.connect(gain);gain.connect(audio.destination);gain.gain.setValueAtTime(.08,audio.currentTime+offset);gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+offset+.18);oscillator.start(audio.currentTime+offset);oscillator.stop(audio.currentTime+offset+.2);}
+    const startAt=audio.currentTime+.02;
+    // 짧은 3음 상승 차임과 마지막 반짝임으로, 경계마다 부담 없이 들리는 귀여운 알림음.
+    const notes=[[659.25,0,.23,.055,'triangle'],[783.99,.14,.23,.05,'triangle'],[987.77,.28,.28,.05,'triangle'],[1318.51,.44,.18,.023,'sine']];
+    for(const [frequency,offset,length,volume,type] of notes) {
+      const oscillator=audio.createOscillator(), gain=audio.createGain(), start=startAt+offset, end=start+length;
+      oscillator.type=type; oscillator.frequency.setValueAtTime(frequency,start); oscillator.connect(gain); gain.connect(audio.destination);
+      gain.gain.setValueAtTime(.001,start); gain.gain.linearRampToValueAtTime(volume,start+.018); gain.gain.exponentialRampToValueAtTime(.001,end);
+      oscillator.start(start); oscillator.stop(end+.02);
+    }
   }
   function showAlarm(title,text,state='study',sound=false) {
     $('alarm-title').textContent=title; $('alarm-message').textContent=text; setArt($('alarm-art'),data.preferences.theme,state);
