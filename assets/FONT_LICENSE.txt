@@ -1,0 +1,19 @@
+온글잎 박다현체 / Ownglyph PDH
+Copyright © 2023 VoyagerX, inc. & Dahyeon Park.
+
+공식 배포처:
+https://www.ownglyph.com/trial/11ebf7f8-0997-4f03-a393-0959a07286aa
+
+공식 사이트의 온글잎 오리지널 폰트 라이선스에서 확인한 사용 범위:
+문서작성, E-Learning, E-Book, 인쇄물, UI(Web, App/SW UI), 영상,
+포장지, 임베딩(HW 내 탑재, SW 내 탑재, 웹서버), CI/BI, 폰트 배포: 허용.
+폰트 파일 수정 및 폰트 파일 자체 유료 판매: 금지.
+
+저작재산권은 (주)보이저엑스와 해당 손글씨 제공자에게 있습니다.
+해당 폰트를 사용한 인쇄물, 광고물(온라인 포함)의 이미지는
+온글잎(또는 (주)보이저엑스) 프로모션을 위해 활용될 수 있습니다.
+
+원본 폰트 파일은 수정하지 않았습니다.
+공식 라이선스 UI의 근거:
+https://www.ownglyph.com/_next/static/chunks/8964-a0974d8c84e2070b.js
+확인일: 2026-09-28

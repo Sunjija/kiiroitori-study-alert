@@ -1,0 +1,9 @@
+{
+  "id": "cafe",
+  "name": "카페",
+  "images": {
+    "study": "study.png",
+    "rest": "rest.png",
+    "finish": "finish.png"
+  }
+}

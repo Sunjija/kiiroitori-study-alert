@@ -1,0 +1,39 @@
+{
+  "scheduleChecks": 20,
+  "browserFlows": [
+    "date navigation/details",
+    "three art states and both fonts",
+    "sound preference and focus both ways",
+    "daily and weekly editing with reload",
+    "add/delete/reorder/copy/default/cancel",
+    "overlap rejection and plain text markup",
+    "core mode restores original day after reload",
+    "invalid PNG rejection and pack persistence",
+    "JSON with custom images and Markdown export",
+    "invalid and cancelled import preserve data",
+    "confirmed v3 settings import",
+    "blocked storage preserves chosen font",
+    "notification fallback and merged boundary alarm",
+    "single HTML offline with no network requests"
+  ],
+  "errors": [],
+  "standalone": {
+    "offline": true,
+    "assets": [
+      "도서관 공부",
+      "도서관 휴식",
+      "도서관 마감",
+      "카페 공부",
+      "카페 휴식",
+      "카페 마감"
+    ],
+    "fonts": [
+      "Pretendard",
+      "Ownglyph"
+    ],
+    "editReload": true,
+    "coreRestoreReload": true,
+    "externalRequests": [],
+    "errors": []
+  }
+}

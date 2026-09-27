@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-27T20:16:33.538Z",
+  "title": "Design System: 키이로이토리 · 공부 알리미",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "크림 종이",
+        "tonalRamp": [
+          "oklch(15% 0.0120 96.4)",
+          "oklch(26% 0.0120 96.4)",
+          "oklch(38% 0.0120 96.4)",
+          "oklch(49% 0.0120 96.4)",
+          "oklch(61% 0.0120 96.4)",
+          "oklch(72% 0.0120 96.4)",
+          "oklch(84% 0.0120 96.4)",
+          "oklch(95% 0.0120 96.4)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "연한 크림 면",
+        "tonalRamp": [
+          "oklch(15% 0.0282 93.7)",
+          "oklch(26% 0.0282 93.7)",
+          "oklch(38% 0.0282 93.7)",
+          "oklch(49% 0.0282 93.7)",
+          "oklch(61% 0.0282 93.7)",
+          "oklch(72% 0.0282 93.7)",
+          "oklch(84% 0.0282 93.7)",
+          "oklch(95% 0.0282 93.7)"
+        ]
+      },
+      "yellow": {
+        "role": "primary",
+        "displayName": "따뜻한 노랑",
+        "tonalRamp": [
+          "oklch(15% 0.1013 94.4)",
+          "oklch(26% 0.1013 94.4)",
+          "oklch(38% 0.1013 94.4)",
+          "oklch(49% 0.1013 94.4)",
+          "oklch(61% 0.1013 94.4)",
+          "oklch(72% 0.1013 94.4)",
+          "oklch(84% 0.1013 94.4)",
+          "oklch(95% 0.1013 94.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "짙은 갈색",
+        "tonalRamp": [
+          "oklch(15% 0.0372 72.7)",
+          "oklch(26% 0.0372 72.7)",
+          "oklch(38% 0.0372 72.7)",
+          "oklch(49% 0.0372 72.7)",
+          "oklch(61% 0.0372 72.7)",
+          "oklch(72% 0.0372 72.7)",
+          "oklch(84% 0.0372 72.7)",
+          "oklch(95% 0.0372 72.7)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "부드러운 갈색",
+        "tonalRamp": [
+          "oklch(15% 0.0449 80.5)",
+          "oklch(26% 0.0449 80.5)",
+          "oklch(38% 0.0449 80.5)",
+          "oklch(49% 0.0449 80.5)",
+          "oklch(61% 0.0449 80.5)",
+          "oklch(72% 0.0449 80.5)",
+          "oklch(84% 0.0449 80.5)",
+          "oklch(95% 0.0449 80.5)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "종이 경계",
+        "tonalRamp": [
+          "oklch(15% 0.0519 88.6)",
+          "oklch(26% 0.0519 88.6)",
+          "oklch(38% 0.0519 88.6)",
+          "oklch(49% 0.0519 88.6)",
+          "oklch(61% 0.0519 88.6)",
+          "oklch(72% 0.0519 88.6)",
+          "oklch(84% 0.0519 88.6)",
+          "oklch(95% 0.0519 88.6)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "집중 갈색",
+        "tonalRamp": [
+          "oklch(15% 0.0942 70.0)",
+          "oklch(26% 0.0942 70.0)",
+          "oklch(38% 0.0942 70.0)",
+          "oklch(49% 0.0942 70.0)",
+          "oklch(61% 0.0942 70.0)",
+          "oklch(72% 0.0942 70.0)",
+          "oklch(84% 0.0942 70.0)",
+          "oklch(95% 0.0942 70.0)"
+        ]
+      },
+      "danger": {
+        "role": "neutral",
+        "displayName": "오류 적갈색",
+        "tonalRamp": [
+          "oklch(15% 0.1377 27.9)",
+          "oklch(26% 0.1377 27.9)",
+          "oklch(38% 0.1377 27.9)",
+          "oklch(49% 0.1377 27.9)",
+          "oklch(61% 0.1377 27.9)",
+          "oklch(72% 0.1377 27.9)",
+          "oklch(84% 0.1377 27.9)",
+          "oklch(95% 0.1377 27.9)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "현재 일정 제목",
+        "purpose": "일반 화면의 현재 일정 제목. 모바일은 23px."
+      },
+      "headline": {
+        "displayName": "구역 제목",
+        "purpose": "시간표와 대화상자 제목."
+      },
+      "title": {
+        "displayName": "상세 소제목",
+        "purpose": "첫 행동·실행 지침 등 상세 소제목."
+      },
+      "body": {
+        "displayName": "본문",
+        "purpose": "본문·편집 입력. 시간표는 높이에 따라 16px 또는 18px."
+      },
+      "label": {
+        "displayName": "보조 설명",
+        "purpose": "시각 설명과 일반 도구 버튼."
+      },
+      "countdown": {
+        "displayName": "카운트다운",
+        "purpose": "남은 시간. tabular-nums 적용, 모바일은 29px."
+      }
+    },
+    "shadows": [
+      {
+        "name": "dialog",
+        "value": "0 18px 70px #46372438",
+        "purpose": "네이티브 대화상자."
+      },
+      {
+        "name": "toast",
+        "value": "0 8px 24px #46372425",
+        "purpose": "하단 중앙 상태 안내."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-state",
+        "value": ".16s ease",
+        "purpose": "버튼 배경색·테두리색 전환."
+      },
+      {
+        "name": "dialog-reveal",
+        "value": ".2s cubic-bezier(.16,1,.3,1)",
+        "purpose": "대화상자 clip-path와 opacity 진입. prefers-reduced-motion에서는 제거."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min-width",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet-max-width",
+        "value": "959px"
+      },
+      {
+        "name": "mobile-max-width",
+        "value": "600px"
+      },
+      {
+        "name": "compact-max-height",
+        "value": "620px"
+      },
+      {
+        "name": "narrow-compact-max-width",
+        "value": "420px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "주요 버튼",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "저장·확인·지금 시작 등 주요 행동.",
+      "html": "<button class=\"ds-button ds-primary\">저장</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--yellow,#fbe596);border-color:var(--yellow,#fbe596);font-weight:700}.ds-primary:hover{background:#f4d975;border-color:#f4d975}"
+    },
+    {
+      "name": "보조 버튼",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "취소·핵심 모드 등 보조 행동.",
+      "html": "<button class=\"ds-button\">오늘 핵심만</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    },
+    {
+      "name": "상단 설정",
+      "kind": "nav",
+      "refersTo": "button-navigation",
+      "description": "꾸미기·집중 모드·백업 제어.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"화면과 설정\"><button class=\"ds-button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-4 2 2 0 0 1 2-3h2a3 3 0 0 0 3-3 9 9 0 0 0-9-8Z\"/><circle cx=\"7\" cy=\"9\" r=\".7\"/><circle cx=\"11\" cy=\"6\" r=\".7\"/><circle cx=\"16\" cy=\"7\" r=\".7\"/></svg>꾸미기</button><button class=\"ds-button\" aria-pressed=\"false\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></svg>집중 모드</button><button class=\"ds-button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12m-4-4 4 4 4-4M4 15v6h16v-6\"/></svg>백업</button></nav>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-nav{display:flex;gap:8px}.ds-nav .ds-button{border-color:transparent;font-size:14px}.ds-nav svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}@media(max-width:600px){.ds-nav{gap:0}.ds-nav .ds-button{padding:7px;font-size:12px;gap:4px}.ds-nav svg{width:16px;height:16px}}"
+    },
+    {
+      "name": "편집 입력",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "일정 이름과 지침 편집에 쓰는 레이블 포함 입력.",
+      "html": "<label class=\"ds-field-label\">과목 · 일정 이름<input class=\"ds-field\" value=\"영어 기초\" maxlength=\"50\" required></label>",
+      "css": ".ds-field-label{font:14px/1.5 var(--font,Pretendard,'맑은 고딕',sans-serif);color:var(--muted,#736348);display:block}.ds-field{display:block;width:100%;max-width:100%;min-width:0;margin-top:5px;padding:9px 10px;border:1px solid var(--line,#decfaa);background:#fffefa;border-radius:8px;color:var(--ink,#463724);font:16px/1.5 var(--font,Pretendard,'맑은 고딕',sans-serif);caret-color:var(--focus,#8b5e23)}.ds-field:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}"
+    },
+    {
+      "name": "콘셉트 선택",
+      "kind": "chip",
+      "refersTo": "choice-selected",
+      "description": "꾸미기의 콘셉트·미리보기 상태 선택 버튼.",
+      "html": "<div class=\"ds-choices\" role=\"group\" aria-label=\"콘셉트\"><button class=\"ds-button\" aria-pressed=\"true\">도서관</button><button class=\"ds-button\" aria-pressed=\"false\">카페</button></div>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-choices{display:flex;flex-wrap:wrap;gap:8px}.ds-choices .ds-button[aria-pressed=true]{background:var(--yellow,#fbe596);border-color:var(--yellow,#fbe596);font-weight:700}"
+    },
+    {
+      "name": "현재 안내",
+      "kind": "card",
+      "refersTo": "current-panel",
+      "description": "현재 안내 중 제목·시각·카운트다운·행동을 담는 텍스트 영역.",
+      "html": "<section class=\"ds-current\" aria-labelledby=\"ds-current-title\"><h1 id=\"ds-current-title\">전공 당일 기출</h1><p class=\"ds-meta\">13:40–15:00 · 지금 진행 중인 블록</p><div class=\"ds-deadline\"><span>마감까지</span><strong>01:15:00</strong></div><div class=\"ds-actions\"><button class=\"ds-button ds-primary\">지금 시작</button><button class=\"ds-button\">오늘 핵심만</button></div><p class=\"ds-next\">다음 오늘 15:00 · 휴식</p></section>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--yellow,#fbe596);border-color:var(--yellow,#fbe596);font-weight:700}.ds-primary:hover{background:#f4d975;border-color:#f4d975}.ds-current{background:var(--surface,#fff9e4);color:var(--ink,#463724);border-radius:16px;padding:22px 28px;font:16px/1.5 var(--font,Pretendard,'맑은 고딕',sans-serif)}.ds-current h1{margin:0;font-size:30px;font-weight:700;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}.ds-meta{color:var(--muted,#736348);margin:8px 0 10px;font-size:14px}.ds-deadline{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}.ds-deadline span{color:var(--muted,#736348);font-size:14px}.ds-deadline strong{font-size:32px;line-height:1.1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}.ds-actions{display:flex;gap:8px}.ds-actions .ds-button{font-size:14px;padding:8px 14px}.ds-next{font-size:14px;color:var(--muted,#736348);margin:14px 0 0}@media(max-width:600px){.ds-current{padding:16px}.ds-current h1{font-size:23px}.ds-meta{font-size:12px}.ds-deadline{display:block;margin-bottom:10px}.ds-deadline span{display:block;font-size:12px;margin-bottom:3px}.ds-deadline strong{font-size:29px}.ds-actions .ds-button{font-size:12px;padding:7px 9px}.ds-next{font-size:12px;margin-top:10px}}"
+    },
+    {
+      "name": "시간표",
+      "kind": "custom",
+      "refersTo": "timetable",
+      "description": "시간·과목·첫 행동·상태의 고정 열 표. 작은 폭은 첫 행동 열을 숨김.",
+      "html": "<div class=\"ds-table-surface\"><table class=\"ds-table\"><colgroup><col class=\"ds-time-col\"><col class=\"ds-title-col\"><col class=\"ds-instruction-col\"><col class=\"ds-status-col\"></colgroup><thead><tr><th scope=\"col\">시간</th><th scope=\"col\">과목 · 일정</th><th scope=\"col\" class=\"ds-instruction\">첫 행동</th><th scope=\"col\" class=\"ds-status\">상태</th></tr></thead><tbody><tr><td class=\"ds-time\">12:50–13:40</td><td><button class=\"ds-title\" aria-label=\"점심·휴식, 자세히 보기\">점심·휴식</button></td><td class=\"ds-instruction\">식사와 짧은 산책</td><td class=\"ds-status\">지남</td></tr><tr class=\"ds-active\"><td class=\"ds-time\">13:40–15:00</td><td><button class=\"ds-title\" aria-label=\"전공 당일 기출, 자세히 보기\">전공 당일 기출</button></td><td class=\"ds-instruction\">오전 전공 범위 기출 확인</td><td class=\"ds-status\">진행</td></tr><tr><td class=\"ds-time\">15:00–15:15</td><td><button class=\"ds-title\" aria-label=\"휴식, 자세히 보기\">휴식</button></td><td class=\"ds-instruction\">화면에서 눈을 떼고 몸을 움직인다</td><td class=\"ds-status\">예정</td></tr></tbody></table></div>",
+      "css": ".ds-table-surface{border:1px solid var(--line,#decfaa);border-radius:12px;overflow:hidden;background:var(--paper,#fffdf4);color:var(--ink,#463724)}.ds-table{border-collapse:collapse;table-layout:fixed;width:100%;font:16px/1.25 var(--font,Pretendard,'맑은 고딕',sans-serif);font-variant-numeric:tabular-nums}.ds-time-col{width:136px}.ds-status-col{width:65px}.ds-title-col{width:30%}.ds-table th{font-size:13px;color:var(--muted,#736348);font-weight:600;text-align:left;padding:7px 12px;background:var(--surface,#fff9e4);border-bottom:1px solid var(--line,#decfaa)}.ds-table td{padding:5px 12px;height:34px;border-bottom:1px solid #f0e5c7;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ds-table tr:last-child td{border-bottom:0}.ds-table tbody tr:nth-child(even){background:#fffae9}.ds-table tbody tr.ds-active{background:#fbeaab}.ds-table tbody tr:hover{background:#f4e8c2}.ds-title{border:0;border-radius:0;display:block;text-align:left;padding:0;background:transparent;color:inherit;font:600 16px/1.25 var(--font,Pretendard,'맑은 고딕',sans-serif);width:100%;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}.ds-title:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-instruction,.ds-time{color:var(--muted,#736348)}.ds-table .ds-status{text-align:center;font-size:13px;white-space:nowrap}.ds-active .ds-status{color:var(--ink,#463724);font-weight:700}@media(max-width:959px){.ds-instruction-col,.ds-instruction{display:none}.ds-title-col{width:auto}.ds-status-col{width:58px}}@media(max-width:600px){.ds-status-col{width:46px}.ds-table th{padding:6px 8px;font-size:12px}.ds-table td{padding:5px 8px}.ds-table .ds-status{font-size:12px}}"
+    },
+    {
+      "name": "대화상자",
+      "kind": "custom",
+      "refersTo": "dialog",
+      "description": "상세·편집·꾸미기·백업·알림을 담는 네이티브 대화상자의 시각 구성.",
+      "html": "<dialog open class=\"ds-dialog\"><div class=\"ds-dialog-heading\"><h2>첫 행동</h2><button class=\"ds-close\" aria-label=\"닫기\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m6 6 12 12M6 18 18 6\"/></svg></button></div><p>단어 5개부터 시작! 11시에 영어책을 덮어.</p><button class=\"ds-button ds-primary\">확인</button></dialog>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line,#decfaa);background:transparent;color:var(--ink,#463724);border-radius:8px;padding:9px 14px;cursor:pointer;font:16px/1.3 var(--font,Pretendard,'맑은 고딕',sans-serif);white-space:nowrap;transition:background-color .16s ease,border-color .16s ease}.ds-button:hover{background:#f4ebcf;border-color:#b9984e}.ds-button:active{background:var(--yellow,#fbe596)}.ds-button:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}.ds-button:disabled{opacity:.5;cursor:default}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-primary{background:var(--yellow,#fbe596);border-color:var(--yellow,#fbe596);font-weight:700}.ds-primary:hover{background:#f4d975;border-color:#f4d975}.ds-dialog{position:relative;margin:0;width:min(520px,calc(100vw - 28px));max-height:calc(100dvh - 28px);padding:26px;border:0;border-radius:16px;background:var(--paper,#fffdf4);color:var(--ink,#463724);box-shadow:0 18px 70px #46372438;overflow:auto;font:16px/1.5 var(--font,Pretendard,'맑은 고딕',sans-serif)}.ds-dialog::backdrop{background:#46372455}.ds-dialog-heading{display:flex;align-items:start;justify-content:space-between;gap:18px;margin-bottom:18px}.ds-dialog h2{margin:0;font-size:22px;line-height:1.3;font-weight:700;letter-spacing:-.025em;overflow-wrap:anywhere}.ds-dialog p{margin:0 0 14px;white-space:pre-wrap;overflow-wrap:anywhere}.ds-close{display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;background:transparent;color:inherit;border-radius:8px;padding:3px;cursor:pointer;transition:background-color .16s ease,border-color .16s ease}.ds-close svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.ds-close:hover{background:#f4ebcf;border-color:#b9984e}.ds-close:active{background:var(--yellow,#fbe596)}.ds-close:focus-visible{outline:3px solid var(--focus,#8b5e23);outline-offset:3px}@media(max-width:600px){.ds-dialog h2{font-size:19px}}@media(prefers-reduced-motion:reduce){.ds-close{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "도서관·카페의 공부 동행",
+    "overview": "따뜻한 크림 바탕에 노란 선택 상태와 갈색 글자를 사용한다. 제공된 도서관·카페의 공부·휴식·마감 이미지 여섯 장이 화면의 캐릭터 표현을 맡는다. 기본 글꼴은 프리텐다드이며 사용자가 박다현체를 선택할 수 있다.\n\n현재 행동과 남은 시간은 큰 안내 영역에, 하루 일정은 촘촘한 표에 배치한다. 이 문서는 완성된 `style.css`, `index.html`, `app.js`와 실제 브라우저 화면의 구현 기록이다.",
+    "keyCharacteristics": [
+      "크림 면, 노란 강조, 갈색 문자와 가는 경계선.",
+      "현재 행동·카운트다운·상태별 캐릭터를 함께 표시.",
+      "작은 창에서도 시작·종료 시각과 하루 일정을 우선.",
+      "상세·편집·꾸미기·알림은 네이티브 대화상자."
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** 크림 면·노란 선택 상태·갈색 문자와 제공된 캐릭터 에셋을 유지한다.",
+      "**Do** 작은 창에서도 시간표 본문 (16px)와 시작·종료 시각을 함께 보존한다.",
+      "**Do** 줄임표로 생략된 내용은 상세 대화상자에서 제공한다.",
+      "**Do** 키보드 포커스와 버튼 이름, 상태·오류 안내를 유지한다."
+    ],
+    "donts": [
+      "**Don't** 표를 맞추기 위해 본문 글자를 최소 크기보다 줄이거나 시간의 한쪽을 생략한다.",
+      "**Don't** 박다현체 선택 시 시간표의 열·상태·동작 구조를 바꾼다.",
+      "**Don't** 페이지가 닫혀도 알림이 계속된다고 표시하거나 집중 모드를 다른 창 위 고정으로 설명한다.",
+      "**Don't** 브라우저 저장을 파일 자체 저장이나 기기 간 동기화로 설명한다."
+    ]
+  }
+}

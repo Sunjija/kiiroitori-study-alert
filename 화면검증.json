@@ -1,0 +1,47 @@
+{
+  "fits": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "scrollHeight": 1000,
+      "rows": 12,
+      "lastRowBottom": 905.625,
+      "timeCut": false,
+      "tableFont": "16px",
+      "footerBottom": 978.21875
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "rows": 12,
+      "lastRowBottom": 745.375,
+      "timeCut": false,
+      "tableFont": "16px",
+      "footerBottom": 807.875
+    },
+    {
+      "name": "compact",
+      "width": 480,
+      "height": 450,
+      "scrollWidth": 480,
+      "scrollHeight": 450,
+      "rows": 12,
+      "lastRowBottom": 383.5,
+      "timeCut": false,
+      "tableFont": "16px",
+      "footerBottom": 441
+    }
+  ],
+  "editorFit": {
+    "clientWidth": 352,
+    "scrollWidth": 352,
+    "height": 816,
+    "scrollHeight": 843
+  },
+  "errors": []
+}

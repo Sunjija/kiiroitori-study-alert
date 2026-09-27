@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffdf4">
+  <title>키이로이토리 · 공부 알리미</title>
+  <link rel="icon" href="assets/kiiroitori_broom.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5v15M12 5C8 2 4 3 2 4v15c3-1 7-1 10 1 3-2 7-2 10-1V4c-2-1-6-2-10 1Z"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-4 2 2 0 0 1 2-3h2a3 3 0 0 0 3-3 9 9 0 0 0-9-8Z"/><circle cx="7" cy="9" r=".7"/><circle cx="11" cy="6" r=".7"/><circle cx="16" cy="7" r=".7"/></symbol>
+<symbol id="i-focus" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-backup" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 15v6h16v-6"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="m14 5 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6Z"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="m6 15 6-6 6 6"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M5 17h14l-2-3V9a5 5 0 0 0-10 0v5l-2 3Zm5 3h4"/></symbol>
+</defs></svg>
+<header class="topbar">
+  <a class="brand" href="#" id="home-link"><img src="assets/packs/library/study.png" alt="" width="42" height="42"><span>키이로이토리<small>공부 알리미</small></span></a>
+  <nav aria-label="화면과 설정">
+    <button id="plan-open" aria-label="학습 계획"><svg><use href="#i-book"/></svg><span>학습 계획</span></button>
+    <button id="theme-open" aria-label="꾸미기"><svg><use href="#i-palette"/></svg><span>꾸미기</span></button>
+    <button id="focus-toggle" aria-label="집중 모드" aria-pressed="false"><svg><use href="#i-focus"/></svg><span>집중 모드</span></button>
+    <button id="backup-open" aria-label="백업"><svg><use href="#i-backup"/></svg><span>백업</span></button>
+  </nav>
+</header>
+<main class="workspace">
+  <section class="current-block" aria-labelledby="current-title">
+    <div class="current-copy">
+      <h1 id="current-title">오늘의 공부를 준비해요</h1>
+      <p class="current-meta" id="current-meta"></p>
+      <p class="current-tip" id="current-tip"></p>
+      <div class="deadline"><span id="deadline-label">다음 시작까지</span><strong id="countdown">00:00:00</strong></div>
+      <div class="current-actions"><button class="primary" id="start-now">지금 시작</button><button id="core-toggle">오늘 핵심만</button></div>
+      <p class="next-block" id="next-block"></p>
+    </div>
+    <figure class="mascot"><img id="main-art" src="assets/packs/library/rest.png" alt="휴식 중인 키이로이토리"><figcaption id="main-art-caption">도서관 · 휴식</figcaption></figure>
+  </section>
+  <section class="timetable" aria-labelledby="table-title">
+    <div class="table-toolbar">
+      <div class="table-heading"><h2 id="table-title">오늘 시간표</h2><span id="row-count"></span></div>
+      <div class="date-controls">
+        <button id="previous-day" class="icon-button" aria-label="전날"><svg><use href="#i-left"/></svg></button>
+        <button id="today">오늘</button>
+        <input id="schedule-date" type="date" aria-label="시간표 날짜">
+        <button id="next-day" class="icon-button" aria-label="다음날"><svg><use href="#i-right"/></svg></button>
+        <button id="edit-open"><svg><use href="#i-edit"/></svg><span>편집</span></button>
+      </div>
+    </div>
+    <div class="table-surface"><table id="schedule-table"><colgroup><col class="time-column"><col class="title-column"><col class="instruction-column"><col class="status-column"></colgroup>
+      <thead><tr><th scope="col">시간</th><th scope="col">과목 · 일정</th><th scope="col" class="instruction-cell">첫 행동</th><th scope="col" class="status-cell">상태</th></tr></thead>
+      <tbody id="schedule-body"></tbody>
+    </table></div>
+    <div class="table-foot"><span>일정을 선택하면 전체 지침을 볼 수 있어요.</span><span id="day-kind"></span></div>
+  </section>
+  <footer class="app-footer"><span id="storage-status">이 브라우저에 저장됩니다.</span><div><button id="notification-enable"><svg><use href="#i-bell"/></svg><span>알림 켜기</span></button><button id="credits-open">출처·사용 안내</button></div></footer>
+</main>
+
+<dialog id="detail-dialog" class="detail-dialog"><div class="dialog-heading"><h2 id="detail-title"></h2><button class="icon-button" data-close aria-label="닫기"><svg><use href="#i-close"/></svg></button></div><p id="detail-time" class="muted"></p><img id="detail-art" class="detail-art" src="assets/packs/library/rest.png" alt=""><h3>첫 행동</h3><p id="detail-tip"></p><h3>실행 지침</h3><p id="detail-instruction"></p><button class="primary" data-close>확인</button></dialog>
+
+<dialog id="editor-dialog" class="editor-dialog"><div class="dialog-heading"><h2>시간표 편집</h2><button class="icon-button" data-close aria-label="편집 취소"><svg><use href="#i-close"/></svg></button></div>
+<form id="editor-form">
+  <fieldset class="scope-control"><legend class="visually-hidden">변경 범위</legend><label><input type="radio" name="scope" value="week" checked><span id="scope-week-text">매주 이 요일</span></label><label><input type="radio" name="scope" value="day"><span id="scope-day-text">이 날짜만</span></label></fieldset>
+  <div class="editor-body"><aside class="editor-list-area"><div id="editor-list" aria-label="편집할 일정"></div><div class="editor-list-controls"><button type="button" id="add-row">추가</button><button type="button" id="remove-row">삭제</button><button type="button" id="move-up" aria-label="위로 이동"><svg><use href="#i-up"/></svg></button><button type="button" id="move-down" aria-label="아래로 이동"><svg><use href="#i-down"/></svg></button></div><div class="copy-controls"><select id="copy-weekday" aria-label="복사할 요일"></select><button type="button" id="copy-day">복사</button></div><button type="button" id="restore-default">기본 시간표 불러오기</button></aside>
+  <div class="editor-fields"><div class="time-inputs"><label>시작<input type="time" id="edit-start" required></label><label>종료<input type="time" id="edit-end" required></label></div><label>과목 · 일정 이름<input id="edit-title" maxlength="50" required></label><label>실행 지침<textarea id="edit-instruction" maxlength="3000" rows="4"></textarea></label><label>정리 팁 · 알림 문구<textarea id="edit-tip" maxlength="1000" rows="3"></textarea></label></div></div>
+  <p id="editor-error" class="error" role="alert"></p><div class="dialog-footer"><span class="muted">최대 12개 · 저장하면 적용됩니다.</span><button type="button" data-close>취소</button><button type="submit" class="primary">저장</button></div>
+</form></dialog>
+
+<dialog id="theme-dialog" class="theme-dialog"><div class="dialog-heading"><h2>캐릭터와 글꼴</h2><button class="icon-button" data-close aria-label="설정 닫기"><svg><use href="#i-close"/></svg></button></div><p class="muted">선택하면 바로 적용되고 다음에도 유지돼요.</p>
+<fieldset><legend>콘셉트</legend><div id="theme-options" class="theme-options"></div></fieldset>
+<div class="theme-preview"><img id="theme-preview-art" src="assets/packs/library/study.png" alt="캐릭터 미리보기"><span id="theme-preview-caption"></span></div>
+<div class="state-options" role="group" aria-label="미리 볼 캐릭터 상태"><button data-state="study">공부</button><button data-state="rest">휴식</button><button data-state="finish">마감</button></div>
+<fieldset class="font-options"><legend>글꼴</legend><label><input type="radio" name="font" value="pretendard">프리텐다드</label><label><input type="radio" name="font" value="handwritten">박다현체</label></fieldset>
+<label class="sound-option"><input type="checkbox" id="sound-enabled">알림음 사용</label>
+<div class="pack-add"><button id="pack-import">에셋 팩 추가</button><input type="file" id="pack-file" webkitdirectory multiple hidden><span class="muted">manifest.json과 PNG 3장이 든 폴더를 선택하세요.</span></div>
+<p class="small muted">앱에서는 현재 시간표에 따라 모습이 바뀝니다. 위 버튼은 미리보기입니다.</p></dialog>
+
+<dialog id="backup-dialog"><div class="dialog-heading"><h2>시간표와 설정 백업</h2><button class="icon-button" data-close aria-label="백업 창 닫기"><svg><use href="#i-close"/></svg></button></div><p>브라우저 데이터를 지우거나 다른 기기로 옮기기 전에 백업 파일을 저장하세요. 추가한 캐릭터도 함께 내보냅니다.</p><div class="backup-actions"><button class="primary" id="export-json">백업 저장</button><button id="import-json">백업 가져오기</button><button id="export-markdown">시간표 문서 저장</button></div><input type="file" id="backup-file" accept=".json,application/json" hidden><p class="muted">기존 프로그램의 data/settings.json도 가져올 수 있어요. 가져온 파일은 현재 시간표와 설정을 바꿉니다.</p><section id="import-review" hidden><h3>가져올 내용</h3><p id="import-summary"></p><button class="primary" id="import-confirm">이 백업으로 변경</button><button id="import-cancel">취소</button></section><p id="backup-error" class="error" role="alert"></p></dialog>
+
+<dialog id="alarm-dialog"><div class="dialog-heading"><h2 id="alarm-title">다음 행동으로 이동해요</h2><button class="icon-button" data-close aria-label="알림 닫기"><svg><use href="#i-close"/></svg></button></div><img id="alarm-art" class="alarm-art" src="assets/packs/library/rest.png" alt=""><p id="alarm-message"></p><button class="primary" data-close>확인</button></dialog>
+<dialog id="credits-dialog"><div class="dialog-heading"><h2>출처·사용 안내</h2><button class="icon-button" data-close aria-label="안내 닫기"><svg><use href="#i-close"/></svg></button></div><p>앱을 열어 둔 동안 예정 시각에 화면 알림을 표시합니다. 숨겨진 탭이나 절전 상태에서는 알림이 늦어질 수 있어요. 돌아오면 현재 일정과 남은 시간을 다시 계산하고 가장 최근의 경계만 안내합니다.</p><p>시스템 알림은 지원하는 브라우저에서 직접 허용해야 합니다. 알림음은 페이지에서 버튼을 누른 뒤 사용할 수 있습니다. 집중 모드는 화면을 간단하게 바꾸며 다른 창 위에 고정하지는 않습니다.</p><p>시간표와 설정은 이 브라우저에 저장됩니다. HTML 파일을 옮기거나 다른 브라우저를 사용할 때는 백업 파일을 함께 가져오세요.</p><p>캐릭터 6장은 AI 생성 이미지이며 공식 배포 이미지가 아닙니다. 기본 글꼴은 프리텐다드 v1.3.9, 선택 글꼴은 온글잎 박다현체입니다.</p><details><summary>글꼴 라이선스</summary><pre id="font-license"></pre></details><button data-close class="primary">확인</button></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-title">
+  <div class="dialog-heading"><h2 id="plan-title">시기별 학습 계획</h2><button class="icon-button" data-close aria-label="학습 계획 닫기"><svg><use href="#i-close"/></svg></button></div>
+  <p>지방직 일반행정 9급 · 거의 노베이스 기준. 현재 주 36시간 20분에서 시작해 저녁 블록을 조금씩 늘려갑니다.</p>
+  <p class="small muted">학습 시기와 공부량을 따로 선택하세요. 날짜가 지나도 자동 증량하지 않습니다. 달력은 초안이며 마지막 두 단계는 실제 필기일에 맞춰 조정합니다.</p>
+  <div class="plan-fields"><label>학습 시기<select id="plan-stage"></select></label><label>주간 공부량<select id="plan-level"></select></label><label>전공 요일 배치<select id="plan-cycle"><option value="A">A · 월화목 행정법 / 수금 행정학</option><option value="B">B · 월화목 행정학 / 수금 행정법</option></select></label></div>
+  <p class="small muted">초반에는 2주마다 A/B를 맞바꿔 두 전공의 시간을 균형 있게 배정하세요. 약점이 확인되면 더 필요한 과목에 맞춥니다.</p>
+  <label class="plan-qualified"><input type="checkbox" id="plan-qualified">한능검 3급 이상 취득 완료 · 해당 시간을 영어·전공 복습으로 전환</label>
+  <h3 id="plan-goal"></h3><ul id="plan-tasks" class="plan-tasks"></ul>
+  <h3 id="plan-total"></h3><p class="small muted">강의 포함 예정 학습 블록의 합계입니다. 휴식·근무·정리는 제외했으며 실제 공부 시간과는 구분합니다.</p>
+  <div class="plan-preview"><table aria-label="선택한 주간 계획 미리보기"><thead><tr><th scope="col">요일</th><th scope="col">시작–학습 종료</th><th scope="col">학습량</th><th scope="col">주 전공</th></tr></thead><tbody id="plan-preview-body"></tbody></table></div>
+  <h3>다음 단계로 늘리는 기준</h3><p id="plan-check"></p>
+  <p class="small muted">권장 증량: 2주 유지 → 40시간 → 2주 유지 → 44시간 → 2주 유지 → 48시간. 18시 이후 저녁 블록을 영어 재시험·기출·누적 복습에 붙입니다. 23시 30분 이후는 새 강의 대신 가벼운 FSRS/Anki·단어·오답 복습만 선택합니다.</p>
+  <p id="plan-current" class="small muted"></p>
+  <div class="plan-actions"><button id="plan-apply" class="primary">이 계획을 시간표에 적용</button><button id="plan-undo" disabled>적용 직전 주간 계획 복원</button></div>
+  <p class="small muted">복원은 앱을 열어 둔 동안 마지막 적용 1회에 사용할 수 있어요. 다음 접속에서도 보관하려면 백업을 저장하세요.</p>
+  <details class="plan-sources"><summary>시험 기준과 학습 근거</summary><p class="small">2027년 9급은 한국사를 한능검 3급 이상으로 대체하고, 국어·영어·전공 2과목 각 25문항, 총 100문항·110분으로 개편됩니다. <a href="https://www.korea.kr/multi/visualNewsView.do?newsId=148953239" target="_blank" rel="noopener">정부 안내</a></p><p class="small">한능검 첫 응시 목표로 검토할 수 있는 제81회는 2026.11.28(토), 정기 접수는 11.03–11.10입니다. 토요일 알바와 겹치므로 근무 조정이 필요합니다. <a href="https://www.historyexam.go.kr/pageLink.do?link=examSchedule" target="_blank" rel="noopener">공식 시험 일정</a></p><p class="small">책 없이 떠올리기, 시간을 두고 다시 확인하기, 해설 예제와 문제 풀이를 연결하는 원칙을 반영했습니다. <a href="https://ies.ed.gov/ncee/wwc/PracticeGuide/1" target="_blank" rel="noopener">IES 학습 지침</a></p></details>
+</dialog>
+<noscript>시간표를 표시하려면 브라우저에서 JavaScript를 허용해 주세요.</noscript>
+<script src="license.js"></script>
+<script src="data.js"></script><script src="engine.js"></script><script src="plan.js"></script><script src="app.js"></script>
+</body></html>

@@ -1,0 +1,11 @@
+# Local browser and editor state
+.DS_Store
+Thumbs.db
+*.log
+
+# Local QA scratch files
+review/
+work/
+
+# Keep generated deliverables outside the repository
+*.zip

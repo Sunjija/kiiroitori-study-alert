@@ -1,0 +1,9 @@
+{
+  "id": "library",
+  "name": "도서관",
+  "images": {
+    "study": "study.png",
+    "rest": "rest.png",
+    "finish": "finish.png"
+  }
+}
